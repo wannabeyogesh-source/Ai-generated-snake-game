@@ -60,7 +60,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const currentTrack = DUMMY_TRACKS[currentTrackIndex];
 
   useEffect(() => {
-    let interval: number;
+    let interval: ReturnType<typeof setInterval> | undefined;
     if (isPlaying) {
       interval = setInterval(() => {
         setProgress((p) => {
